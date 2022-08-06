@@ -4,21 +4,24 @@ window = Tk()
 window.title("'Sup")
 window.minsize(width=500, height=300)
 
-input_thing = Entry(width=10)
-input_thing.pack()
-
 # Label
-label = Label(text="HEY! HEEEEYYYY! I'M A LABEL", font=("Arial", 24))
-label.pack(side="left")
+label = Label(text="HEY! HEEEEYYYY! I'M A LABEL", font=("Arial"))
+label.grid(column=0, row=0)
 
 def button_clicked():
-    label.config(text=input_thing.get())
+    label.config(text=entry.get())
 
-button = Button(text="cicke me. I dare you! WITNESS MEEEEEE!!!", command=button_clicked)
-button.pack()
+button = Button(text="button 1", command=button_clicked)
+button.grid(column=1, row=1)
 
-# input_thing = Entry(width=10)
-# input_thing.pack()
-# print(input_thing.get())
+new_button = Button(text="button 2")
+new_button.grid(column=2, row=0)
+
+entry = Entry(width=10)
+entry.grid(column=3, row=2)
+
+# entry = Entry(width=10)
+# entry.pack()
+# print(entry.get())
 
 window.mainloop()
